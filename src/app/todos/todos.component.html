@@ -7,12 +7,12 @@
       class = "todo-input"
       [(ngModel)] = "inputTask"
     />
-    <input type="submit" value="Add Task" class="todo-submit"/>
+    <input type="submit" value="+ Add Task" class="todo-submit"/>
   </form>
 
   <div *ngFor="let task of tasks; let i=index;" class="todo {{ (task.completed ? 'done': '') }}">
     <div class="id">{{ i }}</div>
     <div class="content" (click)="toggleDone(i)">{{task.content}}</div>
-    <button class="delete" (click)="deleteTask(i)">Remove</button>
+    <button class="delete" (click)="deleteTask(i)"><i class="fa fa-trash-o" style="font-size:24px; color: red;"></i></button>
   </div>
 </div>
